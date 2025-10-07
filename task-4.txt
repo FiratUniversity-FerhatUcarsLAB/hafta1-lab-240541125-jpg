@@ -1,4 +1,49 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:240541125
+AD-SOYAD:Şevval Bulut
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+Fonksiyon LegoSekilOlustur(hedef_sekil):
+
+    // 1. Şekli analiz et
+    boyutlar = SekilBoyutlariniHesapla(hedef_sekil)
+    gerekli_parcalar = GerekliParcalariHesapla(hedef_sekil, boyutlar)
+
+    // 2. Parçaları temin et
+    eldeki_parcalar = ParcaListesiniHazirla()
+    
+    Eğer gerekli_parcalar ⊄ eldeki_parcalar:
+        Eksik parçaları raporla
+        Geri dön: "İnşa edilemez"
+
+    // 3. İnşa planını oluştur
+    insa_adimlari = InsaaPlaniniOlustur(hedef_sekil, gerekli_parcalar)
+
+    // 4. İnşaya başla
+    Döngü her adım içinde insa_adimlari:
+        ParçayiYerineKoy(adım.parca, adım.konum, adım.yon)
+        InsaDurumunuGuncelle()
+
+    // 5. Tamamlandığını bildir
+    Geri dön: "Şekil başarıyla oluşturuldu"
+ Yardımcı Fonksiyonlar
+java
+Kodu kopyala
+Fonksiyon SekilBoyutlariniHesapla(hedef_sekil):
+    // Yükseklik, genişlik, derinlik gibi boyutları çıkart
+    Geri dön (yükseklik, genişlik, derinlik)
+
+Fonksiyon GerekliParcalariHesapla(hedef_sekil, boyutlar):
+    // Her katmanda hangi parçaların gerektiğini belirle
+    Geri dön: parça_listesi
+
+Fonksiyon ParcaListesiniHazirla():
+    // Mevcut Lego parça envanterini döndür
+    Geri dön: eldeki_parcalar_listesi
+
+Fonksiyon InsaaPlaniniOlustur(hedef_sekil, parcalar):
+    // Parçaların hangi sırayla ve nereye yerleştirileceğini hesapla
+    Geri dön: adım_listesi
+
+Fonksiyon ParçayiYerineKoy(parca, konum, yön):
+    // Fiziksel olarak ya da simülasyonda parçayı yerine yerleştir
+    Yazdır: "Parça yerleştirildi: ", parca, konum
