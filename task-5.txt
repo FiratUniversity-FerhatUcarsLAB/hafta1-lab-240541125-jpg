@@ -1,4 +1,77 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:240541125
+AD-SOYAD:Şevval Bulut
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+Fonksiyon ViralOl():
+
+    // 1. Hedef kitleyi analiz et
+    hedef_kitle = HedefKitleyiBelirle()
+    trendler = GuncelTrendleriBul(hedef_kitle)
+
+    // 2. İçerik fikri oluştur
+    fikir = YaratıcıFikirUret(trendler, hedef_kitle)
+    içerik = IcerikOlustur(fikir)
+
+    // 3. İçeriği optimize et
+    içerik = IcerikOptimizeEt(içerik, hedef_kitle)
+
+    // 4. Paylaşım zamanı ve platformunu seç
+    en_iyi_zaman = EnIyiPaylasimZamaniBelirle(hedef_kitle)
+    platform = EnUygunPlatformSec(içerik)
+
+    // 5. İçeriği paylaş
+    Paylas(platform, içerik, en_iyi_zaman)
+
+    // 6. Etkileşimleri takip et
+    etkileşim = EtkilesimAnalizi(platform, içerik)
+
+    // 7. Gerekirse yeniden paylaş ya da güncelle
+    Eğer etkileşim < viral_eşik:
+        içerik = GuncelleVeYenidenPaylas(içerik)
+    Aksi halde:
+        Geri dön: "İçerik viral oldu!"
+
+    // 8. Süreci tekrarla
+    ViralOl()
+ Yardımcı Fonksiyonlar
+
+Kodu kopyala
+Fonksiyon HedefKitleyiBelirle():
+    // Demografi, ilgi alanları, davranış verileri
+    Geri dön: hedef_kitle_profili
+
+Fonksiyon GuncelTrendleriBul(hedef_kitle):
+    // Hashtag analizi, popüler videolar, meme'ler
+    Geri dön: trend_listesi
+
+Fonksiyon YaratıcıFikirUret(trendler, hedef_kitle):
+    // Trendlerden esinlenerek özgün içerik fikri üret
+    Geri dön: fikir
+
+Fonksiyon IcerikOlustur(fikir):
+    // Görsel, video, metin vb. üret
+    Geri dön: içerik
+
+Fonksiyon IcerikOptimizeEt(içerik, hedef_kitle):
+    // Başlık, hashtag, müzik, uzunluk gibi ayarlamaları yap
+    Geri dön: optimize_içerik
+
+Fonksiyon EnIyiPaylasimZamaniBelirle(hedef_kitle):
+    // İstatistiksel analizle en çok aktif olunan saatleri bul
+    Geri dön: zaman
+
+Fonksiyon EnUygunPlatformSec(içerik):
+    // TikTok, Instagram, X (Twitter), YouTube Shorts vs.
+    Geri dön: platform
+
+Fonksiyon Paylas(platform, içerik, zaman):
+    // İçeriği paylaş
+    Yazdır: "İçerik paylaşıldı"
+
+Fonksiyon EtkilesimAnalizi(platform, içerik):
+    // Beğeni, paylaşım, yorum, kaydetme gibi verileri analiz et
+    Geri dön: etkileşim_skoru
+
+Fonksiyon GuncelleVeYenidenPaylas(içerik):
+    // Başlık ya da format değiştirip yeniden dene
+    Geri dön: yeni_içerik
