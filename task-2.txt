@@ -1,6 +1,6 @@
 Öğrenci No:240541125
 AD-SOYAD:Şevval Bulut
-
+Seçtiğim algoritma"sudoku çözme yaklaşımı"
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 Fonksiyon SudokuCoz(tahta):
     boş_hücre = BoşHucreBul(tahta)
