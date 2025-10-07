@@ -1,4 +1,40 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:240541125
+AD-SOYAD:Şevval Bulut
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+Fonksiyon MuzikKoleksiyonunuDuzenle(koleksiyon):
+
+    klasor_yapisi = BosSözlük()  // sanatçı -> albüm -> şarkı listesi
+
+    Döngü her parça içinde koleksiyon:
+        sanatci = parça.sanatci
+        album = parça.album
+        sarki_adi = parça.ad
+        tur = parça.tur
+
+        Eğer sanatci klasor_yapisi içinde yoksa:
+            klasor_yapisi[sanatci] = BosSözlük()
+
+        Eğer album klasor_yapisi[sanatci] içinde yoksa:
+            klasor_yapisi[sanatci][album] = BosListe()
+
+        klasor_yapisi[sanatci][album].Ekle(sarki_adi)
+
+    // (İsteğe bağlı) Koleksiyonu alfabetik sıraya göre sırala
+    klasor_yapisi = AlfabetikSırala(klasor_yapisi)
+
+    Geri dön klasor_yapisi
+Yardımcı Fonksiyonlar
+Fonksiyon AlfabetikSırala(klasor_yapisi):
+    sırali_sanatcilar = sanatçılar listesini alfabetik sırala
+    yeni_yapi = BosSözlük()
+
+    Döngü her sanatci içinde sırali_sanatcilar:
+        sırali_albumler = sanatci altındaki albümleri sırala
+        yeni_yapi[sanatci] = BosSözlük()
+
+        Döngü her album içinde sırali_albumler:
+            sırali_sarkilar = klasor_yapisi[sanatci][album] listesini sırala
+            yeni_yapi[sanatci][album] = sırali_sarkilar
+
+    Geri dön yeni_yapi
