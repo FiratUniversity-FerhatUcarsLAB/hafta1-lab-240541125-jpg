@@ -1,6 +1,6 @@
 Öğrenci No:240541125
 AD-SOYAD:Şevval Bulut
-
+Seçtiğim algoritma"lego ile belirli şekil yapma"
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 Fonksiyon LegoSekilOlustur(hedef_sekil):
 
