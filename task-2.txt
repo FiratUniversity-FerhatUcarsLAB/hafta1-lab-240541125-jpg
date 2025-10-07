@@ -1,4 +1,48 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:240541125
+AD-SOYAD:Şevval Bulut
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+Fonksiyon SudokuCoz(tahta):
+    boş_hücre = BoşHucreBul(tahta)
+    
+    Eğer boş_hücre yoksa:
+        Geri dön: true  // Tüm hücreler dolu, çözüm bulundu
+    
+    satır, sütun = boş_hücre
+
+    Döngü rakam içinde 1 ile 9 arasında:
+        Eğer GecerliMi(tahta, rakam, satır, sütun):
+            tahta[satır][sütun] = rakam
+
+            Eğer SudokuCoz(tahta):
+                Geri dön: true  // Geçerli çözüm bulundu
+
+            tahta[satır][sütun] = 0  // Geri al (backtrack)
+
+    Geri dön: false  // Hiçbir sayı işe yaramadı, geri dön
+Yardımcı Fonksiyonlar
+Fonksiyon BoşHucreBul(tahta):
+    Döngü i içinde 0 ile 8:
+        Döngü j içinde 0 ile 8:
+            Eğer tahta[i][j] == 0:
+                Geri dön: (i, j)
+    Geri dön: null
+
+Fonksiyon GecerliMi(tahta, rakam, satır, sütun):
+    // Satırda var mı?
+    Eğer rakam satırdaki herhangi bir hücrede varsa:
+        Geri dön: false
+
+    // Sütunda var mı?
+    Eğer rakam sütundaki herhangi bir hücrede varsa:
+        Geri dön: false
+
+    // 3x3 kutuda var mı?
+    baş_satır = (satır // 3) * 3
+    baş_sütun = (sütun // 3) * 3
+    Döngü i içinde 0 ile 2:
+        Döngü j içinde 0 ile 2:
+            Eğer tahta[baş_satır + i][baş_sütun + j] == rakam:
+                Geri dön: false
+
+    Geri dön: true
