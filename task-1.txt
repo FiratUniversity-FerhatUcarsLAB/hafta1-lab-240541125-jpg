@@ -1,6 +1,6 @@
 Öğrenci No:240541125
 AD-SOYAD:Şevval Bulut
-
+Seçtiğim 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 GİRİŞ:
     sınavTarihi ← kullanıcıdan alın
