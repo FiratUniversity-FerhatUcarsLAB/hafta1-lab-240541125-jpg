@@ -1,4 +1,35 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:240541125
+AD-SOYAD:Şevval Bulut
 
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+GİRİŞ:
+    sınavTarihi ← kullanıcıdan alın
+    konuListesi ← kullanıcıdan alın (örnek: ["Matematik", "Fizik", "Kimya"])
+    günlükÇalışmaSüresi ← kullanıcıdan alın (örnek: 3 saat)
+    tekrarGünleriYüzdesi ← %20 (toplam günlerin %20'si tekrar için ayrılacak)
+
+İŞLEM:
+
+    toplamGün ← sınavTarihi - bugününTarihi
+    tekrarGünSayısı ← yuvarla(toplamGün * tekrarGünleriYüzdesi)
+    çalışmaGünSayısı ← toplamGün - tekrarGünSayısı
+
+    konuSayısı ← uzunluk(konuListesi)
+    konuBaşınaGün ← taban(çalışmaGünSayısı / konuSayısı)
+
+    GÜN = 1
+
+    YİNELE konu in konuListesi:
+        YİNELE i = 1 to konuBaşınaGün:
+            plan[GÜN] ← konu + " çalışılacak, " + günlükÇalışmaSüresi + " saat"
+            GÜN ← GÜN + 1
+
+    // Tekrar günlerini son günlere ekle
+    YİNELE i = 1 to tekrarGünSayısı:
+        plan[GÜN] ← "TEKRAR günü – önceki konular gözden geçirilecek"
+        GÜN ← GÜN + 1
+
+ÇIKIŞ:
+
+    YİNELE gün in plan:
+        yazdır("Gün " + gün + ": " + plan[gün])
