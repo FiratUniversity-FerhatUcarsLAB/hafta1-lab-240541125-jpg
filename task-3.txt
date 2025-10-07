@@ -1,6 +1,6 @@
 Öğrenci No:240541125
 AD-SOYAD:Şevval Bulut
-
+Seçtiğim algoritma"müzik koleksiyonu düzenleme"
 Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
 Fonksiyon MuzikKoleksiyonunuDuzenle(koleksiyon):
 
